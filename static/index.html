@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitor de Recursos</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="header">
+      <div>
+        <h1>Monitor de Recursos</h1>
+      </div>
+      <div class="status">
+        <span id="status-dot" class="status-dot disconnected"></span>
+        <span>Status WebSocket: <strong id="connection-status">Desconectado</strong></span>
+      </div>
+    </section>
+
+    <section class="metrics-grid">
+      <article class="metric-card">
+        <span>CPU</span>
+        <strong id="cpu-value">--%</strong>
+      </article>
+      <article class="metric-card">
+        <span>RAM</span>
+        <strong id="ram-value">--%</strong>
+      </article>
+      <article class="metric-card">
+        <span>RAM utilizada</span>
+        <strong id="ram-used">--</strong>
+      </article>
+      <article class="metric-card">
+        <span>Ultima atualizacao</span>
+        <strong id="last-update">--:--:--</strong>
+      </article>
+    </section>
+
+    <section class="charts">
+      <div class="chart-panel">
+        <h2>CPU ao longo do tempo</h2>
+        <canvas id="cpu-chart"></canvas>
+      </div>
+      <div class="chart-panel">
+        <h2>RAM ao longo do tempo</h2>
+        <canvas id="ram-chart"></canvas>
+      </div>
+    </section>
+
+    <section class="history">
+      <h2>Historico recente</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Horario</th>
+            <th>CPU</th>
+            <th>RAM</th>
+          </tr>
+        </thead>
+        <tbody id="history-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
